@@ -3,16 +3,20 @@
 // Function to handle button click events
 function selectOption(option) {
     if (option === 'yes') {
-        // Start the music!
-        document.getElementById('valentine-music').play();
+        // 1. Try to play the music immediately
+        var music = document.getElementById('valentine-music');
+        music.play().catch(function(error) {
+            console.log("Audio play failed:", error);
+        });
 
-        // The rest of your existing code...
+        // 2. Then do the rainbow flash
         flashRainbowColors(function() {
             document.getElementById('question').style.display = 'none';
             displayCatHeart();
         });
+    } else if (option === 'no') {
+        // ... (your existing 'no' code)
     }
-    // ... rest of the code
 }
         function selectOption(option) {
     if (option === 'yes') {
@@ -97,3 +101,4 @@ function displayCatHeart() {
 // Display the cat.gif initially
 
 displayCat();
+
