@@ -2,13 +2,18 @@
 
 // Function to handle button click events
 function selectOption(option) {
-    // Check which option was clicked
     if (option === 'yes') {
-        // Flash rainbow colors
+        // Start the music!
+        document.getElementById('valentine-music').play();
+
+        // The rest of your existing code...
         flashRainbowColors(function() {
-            document.getElementById('question').style.display = 'none'; // Hide the question
-            displayCatHeart(); // Display the cat-heart.gif
+            document.getElementById('question').style.display = 'none';
+            displayCatHeart();
         });
+    }
+    // ... rest of the code
+}
         function selectOption(option) {
     if (option === 'yes') {
         // Start the music!
@@ -90,4 +95,5 @@ function displayCatHeart() {
 }
 
 // Display the cat.gif initially
+
 displayCat();
